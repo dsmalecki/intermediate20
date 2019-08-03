@@ -63,6 +63,43 @@ public class CustomerStatistic {
         }
         return resultMap;
     }
-}
 
+    public static Map<BigDecimal, List<Customer>> convertToSalaryStatisticsMapWithStream() {
+        return convertToList().stream()
+                .collect(Collectors.groupingBy(customer -> customer.getSalary()));
+    }
+
+    //6. Napisz metodę, która zwróci
+    // mapę map <imię,<zarobki, liczba_osób_z_takimi_zarobkami>>
+
+    public static Map<String, Map<BigDecimal, Integer>> convertToMapiontko() {
+        Map<String, Map<BigDecimal, Integer>> veryGoodMap = new HashMap<>();
+        for (Customer person : people) {
+            if (veryGoodMap.containsKey(person.getFirstName())) {
+                Map<BigDecimal, Integer> innerMap = veryGoodMap.get(person.getFirstName());
+                if (innerMap.containsKey(person.getSalary())) {
+                    Integer counter = innerMap.get(person.getSalary());
+                    counter = counter + 1;
+                    innerMap.put(person.getSalary(), counter);
+                } else {
+                    innerMap.put(person.getSalary(), 1);
+                }
+            } else {
+                Map<BigDecimal, Integer> innerMap = new HashMap<>();
+                innerMap.put(person.getSalary(), 1);
+                veryGoodMap.put(person.getFirstName(), innerMap);
+            }
+        }
+        return veryGoodMap;
+    }
+
+    public static Map<String, Map<BigDecimal, Long>> convertToMapiontkoWithStream() {
+       return convertToList().stream()
+                .collect(
+                        Collectors.groupingBy(p -> p.getFirstName(),
+                                Collectors.groupingBy(p -> p.getSalary(),
+                                        Collectors.counting())
+                        ));
+    }
+}
 
