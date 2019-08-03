@@ -1,12 +1,18 @@
 package pl.sda.intermediate;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 
+@Getter
+@Setter
+
 public class Customer {
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
-    private int age;
+    private Integer age;
     private BigDecimal salary;
 
     static int counter = 0;
@@ -32,4 +38,5 @@ public class Customer {
         this.age = age;
         this.salary = BigDecimal.valueOf(salary);
     }
+
 }
