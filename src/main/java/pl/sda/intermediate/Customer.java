@@ -39,4 +39,14 @@ public class Customer {
         this.salary = BigDecimal.valueOf(salary);
     }
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
+    }
 }
