@@ -15,20 +15,20 @@ public class Playlist implements Playable {
     public String play() {
         String result = "";
         if (playmode == PlayMode.SEQUENCE) {
-            result = populateResult(result, elements);
+            result = populateResult(elements);
         } else if (playmode == PlayMode.RANDOM) {
             List<Playable> tempList = new ArrayList<>(elements);
             Collections.shuffle(tempList);
-            result = populateResult(result, tempList);
+            result = populateResult(tempList);
         } else if (playmode == PlayMode.LOOP) {
             for (int i = 0; i < 10; i++) {
-                result = populateResult(result, elements);
+                result = populateResult(elements);
             }
         }
         return result;
     }
 
-    private String populateResult(String result, List<Playable> tempList) {
+    private String populateResult(List<Playable> tempList) {
 //        for (Playable element : tempList) {
 //            result = result + element.play() + "\n";
 //        }
