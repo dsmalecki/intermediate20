@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Playlist implements Playable {
     private PlayMode playmode = PlayMode.SEQUENCE;
@@ -13,18 +14,29 @@ public class Playlist implements Playable {
     @Override
     public String play() {
         String result = "";
-        if(playmode == PlayMode.SEQUENCE) {
-            for (Playable element : elements) {
-                result = result + element.play() + "\n" ;
-            }
-        }else if(playmode == PlayMode.RANDOM){
+        if (playmode == PlayMode.SEQUENCE) {
+            result = populateResult(result, elements);
+        } else if (playmode == PlayMode.RANDOM) {
             List<Playable> tempList = new ArrayList<>(elements);
             Collections.shuffle(tempList);
-            for (Playable element : tempList) {
-                result = result + element.play() + "\n" ;
+            result = populateResult(result, tempList);
+        } else if (playmode == PlayMode.LOOP) {
+            for (int i = 0; i < 10; i++) {
+                result = populateResult(result, elements);
             }
         }
         return result;
+    }
+
+    private String populateResult(String result, List<Playable> tempList) {
+//        for (Playable element : tempList) {
+//            result = result + element.play() + "\n";
+//        }
+//        return result.trim();
+        return tempList.stream()
+                .map(e -> e.play())
+                .collect(Collectors.joining("\n"));
+
     }
 
     public void addElementToList(Playable playable) {
