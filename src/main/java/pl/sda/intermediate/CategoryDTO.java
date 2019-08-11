@@ -10,7 +10,13 @@ public class CategoryDTO { //DTO - data transfer object
     private String name;
     private Integer parentId;
 
-    private boolean selected;
-    private boolean open;
+    private CategoryState state = new CategoryState();
 
+    public String getParent(){
+        return (parentId == null) ? "#" : this.parentId.toString();
+    }
+
+    public String getText(){
+        return this.name;
+    }
 }

@@ -26,8 +26,8 @@ class CategoryServiceTest {
                 .orElse(null);
 
 
-        Assertions.assertTrue(cat6.isSelected());
-        Assertions.assertTrue(cat4.isOpen());
+        Assertions.assertTrue(cat6.getState().isSelected());
+        Assertions.assertTrue(cat4.getState().isOpened());
 
     }
 }

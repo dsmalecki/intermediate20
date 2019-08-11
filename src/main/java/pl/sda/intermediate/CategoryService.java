@@ -28,8 +28,8 @@ public class CategoryService {
     private void selectedAndOpenPopulator(String searchedText, List<CategoryDTO> result) {
         for (CategoryDTO categoryDTO : result) {
             if (categoryDTO.getName().contains(searchedText)) {
-                categoryDTO.setSelected(true);
-                categoryDTO.setOpen(true);
+                categoryDTO.getState().setSelected(true);
+                categoryDTO.getState().setOpened(true);
                 openParent(categoryDTO.getParentId(), result);
             }
         }
@@ -43,7 +43,7 @@ public class CategoryService {
                 .filter(e -> e.getId().equals(parentId))
                 .findFirst()
                 .orElse(null);
-        parent.setOpen(true);
+        parent.getState().setOpened(true);
         openParent(parent.getParentId(), dtoList);
     }
 
