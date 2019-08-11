@@ -2,6 +2,8 @@ package pl.sda.intermediate;
 
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+import pl.sda.intermediate.others.CarConstantHashCode;
+import pl.sda.intermediate.others.CarRandomHashCode;
 
 import java.util.HashSet;
 import java.util.Set;

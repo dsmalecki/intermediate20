@@ -2,10 +2,10 @@ package pl.sda.intermediate;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import pl.sda.intermediate.shop.categories.CategoryDTO;
+import pl.sda.intermediate.shop.categories.CategoryService;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CategoryServiceTest {
 

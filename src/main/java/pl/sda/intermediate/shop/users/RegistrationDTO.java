@@ -1,4 +1,4 @@
-package pl.sda.intermediate;
+package pl.sda.intermediate.shop.users;
 
 import lombok.Getter;
 import lombok.Setter;

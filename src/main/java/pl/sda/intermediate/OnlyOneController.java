@@ -3,6 +3,8 @@ package pl.sda.intermediate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pl.sda.intermediate.shop.categories.CategoryDTO;
+import pl.sda.intermediate.shop.categories.CategoryService;
 
 import java.util.List;
 

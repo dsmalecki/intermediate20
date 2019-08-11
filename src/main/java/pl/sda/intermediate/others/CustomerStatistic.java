@@ -1,6 +1,5 @@
-package pl.sda.intermediate;
+package pl.sda.intermediate.others;
 
-import java.awt.*;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.List;

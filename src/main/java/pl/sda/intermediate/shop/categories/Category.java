@@ -1,9 +1,7 @@
-package pl.sda.intermediate;
+package pl.sda.intermediate.shop.categories;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter
 @Setter

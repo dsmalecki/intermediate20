@@ -1,24 +1,21 @@
-package pl.sda.intermediate;
+package pl.sda.intermediate.others;
 
 import lombok.AllArgsConstructor;
 
-import java.util.Objects;
-import java.util.Random;
 @AllArgsConstructor
-public class CarRandomHashCode {
+public class CarConstantHashCode {
     String model;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CarRandomHashCode that = (CarRandomHashCode) o;
+        CarConstantHashCode that = (CarConstantHashCode) o;
         return model.equals(that.model);
     }
 
     @Override
     public int hashCode() {
-        return new Random().nextInt(5);
+        return 5;
     }
-
 }

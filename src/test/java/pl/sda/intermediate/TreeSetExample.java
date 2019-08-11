@@ -1,6 +1,7 @@
 package pl.sda.intermediate;
 
 import org.junit.jupiter.api.Test;
+import pl.sda.intermediate.shop.categories.Category;
 
 import java.util.Set;
 import java.util.TreeSet;
