@@ -42,7 +42,7 @@ class StringCalculatorTest {
 
     @Test
     void shouldReturnSumWhenGivenTwoNumbersAndRandomDelimiterInString() {
-        String text = "//x\n 1x 2 ";
+        String text = "//*\n 1* 2 ";
 
         int result = StringCalculator.adding(text);
         Assertions.assertEquals(3, result);
